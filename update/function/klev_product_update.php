@@ -44,9 +44,6 @@ function klev_product_update($product, $productname, $nodearray)
             $new_product = klev_product_images_node($new_product, $imagesnode);
         }
 
-        if (isset($productname['Размер'])) {
-            unset($productname['Размер']);
-        }
         if (isset($product['nomen'][$key]['Размер'])) {
             $productsize = $product['nomen'][$key]['Размер'];
             if (($product['nomen'][$key]['Размер'] != '-') && ($product['nomen'][$key]['Размер'] != 'E')) {
