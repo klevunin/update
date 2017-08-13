@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Update multi shop all
  * DRUPAL 7
@@ -68,6 +69,7 @@ if ((isset($result->num_rows)) AND ($result->num_rows != 0)) {
 
 unset($my_result);
 
+
 foreach ($product as $key => $value) {
 
     $sql = "SELECT * FROM `updaite_site_multi` WHERE `article_color` = '" . $key . "'";
@@ -90,7 +92,10 @@ foreach ($product as $key => $value) {
         $node_id = klev_node_update($productname, $product_id, $nodearray);
 
         if (count($product_id)) {
-            klev_send_mailchip_product($row, $productname, $product_id, $node_id, $nodearray);
+          /**
+           * нужно проверить
+           */
+         //   klev_send_mailchip_product($row, $productname, $product_id, $node_id, $nodearray);
         }
 
     }

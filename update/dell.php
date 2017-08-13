@@ -124,6 +124,7 @@ function product_example_node_dell($entity_id)
 }
 
 //удялем продукт с mailchimp
+//нужно проверить работу атозагрузки.
 function dell_product_mailchimp($nid)
 {
     $data['id'] = $nid;
