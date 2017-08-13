@@ -4,10 +4,8 @@
  * BIG DATA
  */
 require_once __DIR__ . '/../bootstap.php';
-/**
- * vendor autoload.php
- */
-require_once $vendor_pwd;
+
+require_once __DIR__ . '/../composer/vendor/autoload.php';
 
 
 $mysqli = new mysqli($dbhost, $dblogin, $dbpassword, $dbname);
