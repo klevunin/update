@@ -4,7 +4,6 @@
  * BIG DATA
  */
 require_once __DIR__ . '/../bootstap.php';
-
 require_once __DIR__ . '/../composer/vendor/autoload.php';
 
 
