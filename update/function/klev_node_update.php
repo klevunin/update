@@ -34,7 +34,7 @@ function klev_node_update($productname, $product_id, $nodearray)
         $node->field_artcolor['und'][0]['value'] = $artcolor;
         $my_new_node = 1;
         /*проверяем есть ли артикул с описанием в базе*/
-        $node = node_array_add_old($node, $productname);
+        $node = klev_node_json_old($node, $productname);
     }
 
     /*обновляем всегда*/

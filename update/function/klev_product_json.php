@@ -69,7 +69,9 @@ function klev_product_json($new_product, $product, $productname)
         $product_array['Предоплата'] = 'Да';
     }
 
-    $product->field_jsone_product['und'][0]['value'] = json_encode($product_array, JSON_UNESCAPED_UNICODE);
+    if (count($product_array)) {
+        $product->field_jsone_product['und'][0]['value'] = json_encode($product_array, JSON_UNESCAPED_UNICODE);
+    }
     return $new_product;
 
 }

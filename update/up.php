@@ -30,6 +30,7 @@ require_once __DIR__ . '/function/klev_node_model.php';
 require_once __DIR__ . '/function/klev_node_priority.php';
 require_once __DIR__ . '/function/klev_do_not_sell_on_the_site.php';
 require_once __DIR__ . '/function/klev_node_json.php';
+require_once __DIR__ . '/function/klev_node_json_old.php';
 require_once __DIR__ . '/function/klev_node_active.php';
 require_once __DIR__ . '/function/klev_node_save.php';
 require_once __DIR__ . '/function/klev_reIndexSearch.php';
