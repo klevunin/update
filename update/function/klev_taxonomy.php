@@ -9,11 +9,12 @@
  * @return mixed
  * универсальная функция для добавления термина к ноде
  */
-function klev_taxonomy($node, $productname,$name,$vid,$vid_name,$field_name,$q = 0)
+function klev_taxonomy($node, $productname, $name, $vid, $vid_name, $field_name, $q = 0)
 {
     if (isset($node->{$field_name}['und'])) {
         unset($node->{$field_name}['und']);
     }
+
 
     if (isset($productname[$name])) {
 
@@ -21,16 +22,17 @@ function klev_taxonomy($node, $productname,$name,$vid,$vid_name,$field_name,$q =
 
         foreach ($productname[$name] as $key => $value) {
 
-            if ($q >0 && $i >= $q) {
+            if ($q > 0 && $i >= $q) {
                 break;
             }
 
             $term = taxonomy_get_term_by_name($value, $vid_name);
 
+
             if (count($term)) {
 
                 foreach ($term as $termkey => $termitem) {
-                    if ($termitem == $vid) {
+                    if ($termitem->vid == $vid) {
                         $node->{$field_name}['und'][$i]['tid'] = $termkey;
                         $i++;
                         break;
@@ -50,5 +52,6 @@ function klev_taxonomy($node, $productname,$name,$vid,$vid_name,$field_name,$q =
         }
     }
 
-    return $node;
+
+return $node;
 }

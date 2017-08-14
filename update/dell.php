@@ -33,7 +33,7 @@ if ((isset($result->num_rows)) AND ($result->num_rows != 0)) {
     setEmail($email, 'Изменен статус на не активно завершенно!', $text);
 
     //поехали обновлять SKIMIR
-    exec("/usr/bin/php ".__DIR__."/up.php > /dev/null &");
+    //exec("/usr/bin/php ".__DIR__."/up.php > /dev/null &");
 
     exit();
 

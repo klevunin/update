@@ -45,7 +45,7 @@ $mysqli->query("set collation_connection='utf81_general_ci'");
 $mysqli->query("SET NAMES utf8");
 
 $sql = "SELECT `article_color`,`quantity` FROM `updaite_site_multi` LIMIT 0, 10";
-//$sql = "SELECT `article_color`,`quantity` FROM `updaite_site_multi` where `article_color` ='190692-93090'";
+//$sql = "SELECT `article_color`,`quantity` FROM `updaite_site_multi` where `article_color` ='180762-20164'";
 $result = $mysqli->query($sql);
 
 if ((isset($result->num_rows)) AND ($result->num_rows != 0)) {
@@ -104,8 +104,8 @@ foreach ($product as $key => $value) {
     unset($row['product']['nomen']);
 
     /*удаляем строку из базы*/
-   $sql = "DELETE FROM `updaite_site_multi` WHERE `article_color` = '" . $key . "'";
-   $result = $mysqli->query($sql);
+    $sql = "DELETE FROM `updaite_site_multi` WHERE `article_color` = '" . $key . "'";
+    $result = $mysqli->query($sql);
 }
 
 $mysqli->close();
