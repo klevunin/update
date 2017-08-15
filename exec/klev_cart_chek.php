@@ -85,6 +85,8 @@ if (($files = file($discont_cart)) && (count($club_cart))) {
 
             if ((isset($fixed[$fixed_file = trim($files_array[$key][2])])) && ($club_cart[$files_array[$key][0]]->fixed != $fixed_file)) {
                 $update = 1;
+            } else {
+                $fixed_file = $club_cart[$files_array[$key][0]]->fixed;
             }
 
             if ($update) {
