@@ -33,7 +33,7 @@ if (($files = file($discont_cart_new)) && (count($club_cart))) {
             if (isset($club_cart[$number = trim($files_array[$key][0])])) {
 
                 db_update('club_cart')
-                    ->fields(array('cod' => $pincod,'amount' => $amount, 'fixed' => $fixed_file, 'time' => time()))
+                    ->fields(array('cod' => $pincod, 'amount' => $amount, 'fixed' => $fixed_file, 'time' => time()))
                     ->condition('number', $number)
                     ->execute();
 
@@ -71,36 +71,19 @@ if (($files = file($discont_cart)) && (count($club_cart))) {
 
     foreach ($files_array as $key => $value) {
 
-        if (isset($club_cart[$files_array[$key][0]])) {
+        if (isset($club_cart[$number = $files_array[$key][0]])) {
 
-            $update = 0;
-
-            $files_array[$key][1] = round(str_replace(",", ".", $files_array[$key][1]));
-
-            if ($club_cart[$files_array[$key][0]]->amount != $files_array[$key][1]) {
-                $update = 1;
-            }
-
-            $fixed_file = null;
-
-            if ((isset($fixed[$fixed_file = trim($files_array[$key][2])])) && ($club_cart[$files_array[$key][0]]->fixed != $fixed_file)) {
-                $update = 1;
-            } else {
-                $fixed_file = $club_cart[$files_array[$key][0]]->fixed;
-            }
+            $amount = round(str_replace(",", ".", $files_array[$key][1]));
+            $update = ($club_cart[$number]->amount != $files_array[$key][1]) ? 1 : 0;
 
             if ($update) {
-
                 db_update('club_cart')
-                    ->fields(array('amount' => $files_array[$key][1], 'fixed' => $fixed_file, 'time' => time()))
-                    ->condition('number', $files_array[$key][0])
+                    ->fields(array('amount' => $amount, 'time' => time()))
+                    ->condition('number', $number)
                     ->execute();
             }
-
         }
-
     }
-
 }
 
 
