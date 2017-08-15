@@ -92,8 +92,14 @@ if (($files = file($discont_cart)) && (count($club_cart))) {
                     ->execute();
             }
 
-            exit();
         }
+    }
+
+    if ($fh = fopen($discont_cart, "w+")) {
+        fwrite($fh, '');
+        fclose($fh);
+    } else {
+        echo 'Нет досутпа к файлу '.$discont_cart.'!';
     }
 }
 
