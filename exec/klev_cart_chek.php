@@ -54,6 +54,15 @@ if (($files = file($discont_cart_new)) && (count($club_cart))) {
     }
 
 
+    if ($fh = fopen($discont_cart_new, "w+")) {
+        fwrite($fh, '');
+        fclose($fh);
+    } else {
+        echo 'Нет досутпа к файлу '.$discont_cart_new.'!';
+    }
+
+
+
 }
 
 /**
@@ -82,6 +91,8 @@ if (($files = file($discont_cart)) && (count($club_cart))) {
                     ->condition('number', $number)
                     ->execute();
             }
+
+            exit();
         }
     }
 }
