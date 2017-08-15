@@ -31,8 +31,8 @@ function klev_exit_function($my_cache_clear)
     cache_clear_all($my_cache_clear, 'cache_page');
 
     //каталог
-    //exec("/usr/bin/php " . __DIR__ . "/new/go_catalog.php > /dev/null &");
-    //exec("/usr/bin/php " . __DIR__ . "/new/brendfrontnew.php > /dev/null &");
+    exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_catalog.php > /dev/null &");
+    exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_brand.php > /dev/null &");
     //yml
     //exec("/usr/bin/php " . __DIR__ . "/xml/xml_skimir.php > /dev/null &");
     //карты
