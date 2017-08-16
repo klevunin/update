@@ -44,7 +44,7 @@ if (count($derevo = klev_derevo_catalog())) {
         ->fetchAllAssoc('tid');
 
     if (count($taxonomy_index)) {
-        $catalog = klev_getderevo_catalog($derevo, $taxonomy_index);
+        $catalog = klev_getderevo_catalog($derevo, $taxonomy_index,$domainsite);
         $catalog_sex = klev_sex_catalog($derevo, $taxonomy_index, $node_id);
 
         $catalog_html_head_left = '<ul class="clear">';
@@ -66,7 +66,7 @@ if (count($derevo = klev_derevo_catalog())) {
     }
 
 
-    if (count($sport = klev_sport_catalog($node_id))) {
+    if (count($sport = klev_sport_catalog($node_id,$domainsite))) {
 
         $sport_str = '<ul class="clear">';
         foreach ($sport as $item) {

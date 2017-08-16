@@ -29,6 +29,7 @@ if (($files = file($discont_cart_new)) && (count($club_cart))) {
             $pincod = $files_array[$key][1];
             $amount_file = round(str_replace(",", ".", $files_array[$key][2]));
             $amount = (is_numeric($amount_file)) ? $amount_file : 0;
+
             $fixed_file = isset($fixed[$fixed_file = trim($files_array[$key][3])]) ? $fixed_file : null;
 
             if (isset($club_cart[$number = trim($files_array[$key][0])])) {

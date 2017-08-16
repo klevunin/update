@@ -103,7 +103,7 @@ $brand_sitemap = '';
 foreach ($my_zapros as $key => $value) {
 
     $brand_sitemap .= '<url>';
-    $brand_sitemap .= '<loc>https://www.skimir.ru' . urlencode($key) . '</loc>';
+    $brand_sitemap .= '<loc>'.$domainsite.'/' . urlencode($key) . '</loc>';
     $brand_sitemap .= '<lastmod>' . date("Y-m-d") . '</lastmod>';
     $brand_sitemap .= '<changefreq>daily</changefreq>';
     $brand_sitemap .= '<priority>0.9</priority>';

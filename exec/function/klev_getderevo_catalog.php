@@ -5,7 +5,7 @@
  * @return array
  * подготавливаю массив данных с каталогом
  */
-function klev_getderevo_catalog($derevo, $taxonomy_index)
+function klev_getderevo_catalog($derevo, $taxonomy_index,$domainsite)
 {
     $catalog = [];
     $link = [];
@@ -33,7 +33,7 @@ function klev_getderevo_catalog($derevo, $taxonomy_index)
 
     if (count($link)) {
         $file_patch = __DIR__ . '/../../file/catalog.txt';
-        klev_link_txt_sitemap($link, $file_patch, 0.9);
+        klev_link_txt_sitemap($link, $file_patch, 0.9,$domainsite);
     }
 
     return $catalog;

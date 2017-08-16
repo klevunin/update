@@ -1,11 +1,13 @@
 <?php
-
-
-function klev_sport_catalog($nid)
+/**
+ * @param $nid
+ * @return array
+ * горизонтальное меню
+ */
+function klev_sport_catalog($nid,$domainsite)
 {
     $sport = [];
     $link = [];
-
 
     $taxonomy_sport = db_select('taxonomy_term_data', 'f')
         ->fields('f', array('tid', 'vid', 'name'))
@@ -35,7 +37,7 @@ function klev_sport_catalog($nid)
 
     if (count($link)) {
         $file_patch = __DIR__ . '/../../file/sport.txt';
-        klev_link_txt_sitemap($link, $file_patch, 0.9);
+        klev_link_txt_sitemap($link, $file_patch, 0.9,$domainsite);
     }
 
     return $sport;
