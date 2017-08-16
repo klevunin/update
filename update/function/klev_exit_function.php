@@ -35,7 +35,9 @@ function klev_exit_function($my_cache_clear)
     exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_brand.php > /dev/null &");
     //клубные карты. Новые / накопления
     exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_cart_chek.php > /dev/null &");
-    //yml
-    //exec("/usr/bin/php " . __DIR__ . "/xml/xml_skimir.php > /dev/null &");
+    //sitemap
+    exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_sitemap.php > /dev/null &");
+    //xml
+    exec("/usr/bin/php " . __DIR__ . "/../../exec/klev_xml.php > /dev/null &");
 
 }
