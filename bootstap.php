@@ -1,9 +1,6 @@
 <?php
 /**
- * Bootstrap DRUPAL
- * $site_pwd='/home/deploy/apps/shop/web';
- * $site_server_name = 'big.klev.me';
- * $site_http_host = 'big.klev.me';
+ * Bootstrap DRUPAL 7
  **/
 ini_set("memory_limit", "512M");
 set_time_limit(0);
