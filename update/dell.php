@@ -32,8 +32,8 @@ if ((isset($result->num_rows)) AND ($result->num_rows != 0)) {
     $text = 'Изменен статус на не активно полностью';
     setEmail($email, 'Изменен статус на не активно завершенно!', $text);
 
-    //поехали обновлять SKIMIR
-    //exec("/usr/bin/php ".__DIR__."/up.php > /dev/null &");
+    //поехали обновлять магазины!
+    exec("/usr/bin/php ".__DIR__."/up.php > /dev/null &");
 
     exit();
 
