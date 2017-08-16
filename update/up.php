@@ -8,7 +8,7 @@
  */
 error_reporting(E_ALL);
 require_once __DIR__ . '/../bootstap.php';
-require_once __DIR__ . '/../composer/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/function/klev_exit_function.php';
 require_once __DIR__ . '/function/klev_productname.php';
 require_once __DIR__ . '/function/klev_node_load.php';

@@ -35,7 +35,9 @@ function klev_node_active($product)
             ->fetchAllAssoc('entity_id')
         )) {
             foreach ($node_jsone as $key => $value) {
-                $node_array[$key]['array'] = json_decode($value->field_jsone_node_value['und'][0]['value'], assoc);
+                if ((is_string($value->field_jsone_node_value)) && ($value->field_jsone_node_value)) {
+                    $node_array[$key]['array'] = json_decode($value->field_jsone_node_value, assoc);
+                }
             }
         }
 

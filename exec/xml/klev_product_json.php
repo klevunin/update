@@ -12,11 +12,12 @@ function klev_product_json($product_id)
         ->fields('n', array('entity_id', 'field_jsone_product_value'))
         ->condition('n.entity_id', $product_id)
         ->execute()
-        ->fetchAllAssoc('entity_id')))
-    {
+        ->fetchAllAssoc('entity_id'))) {
 
         foreach ($jsone_product as $key => $value) {
-            $product_array[$key] = json_decode($value->field_jsone_product_value['und'][0]['value'],assoc);
+            if ((is_string($value->field_jsone_product_value)) && ($value->field_jsone_product_value)) {
+                $product_array[$key] = json_decode($value->field_jsone_product_value, assoc);
+            }
         }
     }
 

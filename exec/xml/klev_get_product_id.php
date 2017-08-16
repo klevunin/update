@@ -10,7 +10,7 @@ function klev_get_product_id()
     if (count($product_my = db_select('field_data_commerce_stock', 'n')
         ->fields('n', array('entity_id', 'commerce_stock_value'))
         ->condition('n.commerce_stock_value', 0, '>')
-        // ->range(0, 100)
+         ->range(0, 100)
         ->execute()
         ->fetchAllAssoc('entity_id')
     )) {

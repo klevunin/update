@@ -29,7 +29,7 @@ function klev_yandex_yml($active_node_id)
             'description',
             'typePrefix'
         ])
-        ->condition('n.nid', $active_node_id)
+        ->condition('f.nid', $active_node_id)
         ->execute()
         ->fetchAllAssoc('nid')
     )) {

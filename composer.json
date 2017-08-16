@@ -1,5 +1,6 @@
 {
     "require": {
-        "spatie/array-to-xml": "^2.5"
+        "spatie/array-to-xml": "^2.5",
+        "symfony/serializer": "^3.3"
     }
 }

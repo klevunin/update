@@ -7,6 +7,7 @@ require_once __DIR__ . '/../bootstap.php';
 
 require_once __DIR__ . '/xml/klev_get_product_id.php';
 require_once __DIR__ . '/xml/klev_product_json.php';
+require_once __DIR__ . '/xml/klev_node.php';
 require_once __DIR__ . '/xml/klev_node_active.php';
 require_once __DIR__ . '/xml/klev_yandex_yml.php';
 require_once __DIR__ . '/xml/klev_bilder_xml.php';
@@ -19,12 +20,12 @@ if (count($product_id = klev_get_product_id())) {
 
         if (count($node_array = klev_node_active($product))) {
 
-            if (count($node_array['mypn'])) {
+            if (count($node_array)) {
 
                 $active_node_id = [];
                 $mypn = [];
 
-                foreach ($node_array['mypn'] as $key => $value) {
+                foreach ($node_array as $key => $value) {
                     if (isset($node_array[$key]['url'])) {
                         $mypn[$key]['url']=$node_array[$key]['url'];
                     } else {
@@ -57,13 +58,14 @@ if (count($product_id = klev_get_product_id())) {
                 klev_bilder_xml($mypn,$yandex_array);
 
             }
+
         }
 
     }
 }
 
 
-if ($update) {
+if (!$update) {
     klev_bilder_xml(null,null);
 }
 
