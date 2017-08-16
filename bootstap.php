@@ -7,7 +7,6 @@ set_time_limit(0);
 
 require_once __DIR__ . '/config.php';
 
-gc_enable();
 $_SERVER['PWD'] = $site_pwd;
 if (!isset($_SERVER['REMOTE_ADDR'])) {
     $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
