@@ -2,7 +2,8 @@
 /**
  * @param $active_node_id
  * @return array
- * достаем настройки скоректированые в ручную для товаров
+ * достаем настройки скорректированные вручную для товаров
+ *
  */
 function klev_yandex_yml($active_node_id)
 {
